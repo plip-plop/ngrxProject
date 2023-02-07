@@ -1,0 +1,10 @@
+<p>my-comp works!</p>
+<div>
+  <img src="/assets/datas/state-management-lifecycle.png" height="300px" alt="">
+</div>
+<div>
+  <button id="increment" (click)="increment()">Increment</button>
+  <button id="decrement" (click)="decrement()">Decrement</button>
+  <button id="reset" (click)="reset()">Reset Counter</button>
+  <div>Current Count: {{ count$ | async }}</div>
+</div>
