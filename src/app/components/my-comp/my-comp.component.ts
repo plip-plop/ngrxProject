@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { select, Store } from '@ngrx/store';
-import { Observable, tap } from 'rxjs';
+import { map, Observable, pluck, tap } from 'rxjs';
 import { decrement, increment, reset } from 'src/app/components/my-comp/store/counter.action';
 
 @Component({
@@ -15,6 +15,7 @@ export class MyCompComponent {
     this.count$ = store.pipe(
       tap(e => console.log("BEFORE: ", e)),
       select('count'),
+      map((data: any) => data.plop),
       tap(e => console.log("AFTER: ", e)),
     );
   }

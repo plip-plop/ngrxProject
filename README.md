@@ -42,3 +42,18 @@ L'**AppModule** doit importer les éléments suivants.
   ```
   StoreModule.forRoot({ count: counterReducer }),
   ```
+
+
+DETAILS
+Liaison entre les blocs suivants:
+```
+constructor(private store: Store<{ plop: number }>) {
+  this.count$ = store.pipe(
+  select('plop'),
+  );
+}
+ ```
+  et
+  ```
+StoreModule.forRoot({ plop: counterReducer }),
+  ```
